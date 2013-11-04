@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["inbox@seanbehan.com"]
   spec.description   = %q{Wrapper for Wordpress DB}
   spec.summary       = %q{Active Record for the Wordpress DB}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/seanbehan/wpdb"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
