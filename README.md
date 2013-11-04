@@ -1,29 +1,12 @@
 # Wpdb
 
-TODO: Write a gem description
+An Active Record wrapper for the Wordpress Database
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'wpdb'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install wpdb
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```ruby
+wp_post = WpPost.posts.last
+puts wp_post.attributes
+puts wp_post.comments
+puts wp_post.wp_comments.map(&:attributes)
+puts wp_post.categories
+puts wp_post.tags
+```
