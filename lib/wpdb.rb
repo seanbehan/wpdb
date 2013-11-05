@@ -6,7 +6,8 @@ module Wpdb
     has_many :wp_term_relationships, foreign_key: :object_id
     has_many :wp_term_taxonomies, through: :wp_term_relationships
 
-    scope :posts, -> { where(post_type: 'post') }
+    scope :posts,     -> { where(post_type: 'post') }
+    scope :pages,     -> { where(post_type: 'page') }
     scope :published, -> { where(post_status: 'publish')}
 
     def wp_tags
@@ -20,6 +21,10 @@ module Wpdb
 
   class WpComment < ActiveRecord::Base
     belongs_to :wp_post
+
+    scope :approved,  -> { where(comment_approved: "1") }
+    scope :spam,      -> { where(comment_approved: "spam") }
+    scope :trash,     -> { where(comment_approved: "trash") }
   end
 
   class WpTermRelationship < ActiveRecord::Base
