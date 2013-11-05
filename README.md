@@ -16,8 +16,8 @@ ActiveRecord::Base.establish_connection(
 )
 
 wp_post = Wpdb::WpPost.posts.last
-puts wp_post.attributes
-puts wp_post.wp_comments.map(&:attributes)
-puts wp_post.categories
-puts wp_post.tags
+puts wp_post.post_title
+puts wp_post.wp_comments.count
+puts wp_post.wp_categories
+puts wp_post.wp_tags
 ```
